@@ -36,8 +36,8 @@ plot.bart <- function(
      ql <- apply(pdrs, length(dim(pdrs)), quantile,probs=plquants[1])
      qm <- apply(pdrs, length(dim(pdrs)), quantile,probs=.5)
      qu <- apply(pdrs, length(dim(pdrs)), quantile,probs=plquants[2])
-     plot(qm,qm,ylim=range(ql,qu),xlab='meadian of p',ylab=
-      'posterior interval for P(Y=1|x)',...)
+     plot(qm,qm,ylim=range(ql,qu),xlab='median of p',ylab=
+      'Posterior interval for P(Y=1 | x)',...)
      for (i in 1:length(qm))
        lines(rep(qm[i],2),c(ql[i],qu[i]),col=cols[1])
      abline(0,1,lty=2,col=cols[2])
@@ -84,7 +84,7 @@ plot.rbart <- function(x, plquants = c(0.05, 0.95), cols = c('blue','black'), ..
     ql <- apply(pdrs, length(dim(pdrs)), quantile, probs = plquants[1L])
     qm <- apply(pdrs, length(dim(pdrs)), quantile, probs = .5)
     qu <- apply(pdrs, length(dim(pdrs)), quantile, probs = plquants[2L])
-    plot(qm, qm, ylim = range(ql, qu), xlab = "median of p",
+    plot(qm, qm, ylim = range(ql, qu), xlab = "Median of p",
          ylab= "posterior interval for P(Y = 1|  x)", ...)
     for (i in seq_along(qm)) lines(rep(qm[i], 2L), c(ql[i], qu[i]), col = cols[1L])
     abline(0, 1, lty = 2L, col = cols[2L])
